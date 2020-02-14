@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AccesComponent } from './Acces.component';
+import { AccesComponent } from './acces.component';
 
 const routes: Routes = [{
   path: '',
