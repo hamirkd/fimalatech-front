@@ -57,8 +57,9 @@ export class UserService extends UserData {
   }
   login(email:string): Observable<any>{
     let user=this.usersDATA.find(user=>{
-      // if(email.includes(user.email))
-      return user;
+       if(email.includes(user.email))
+      return true;
+      return false;
     })
     return observableOf(user);
 
