@@ -1,0 +1,67 @@
+<nb-card>
+  <nb-card-header>
+    <div class="row">
+      <div class="col-lg-12">
+        <label class="col-lg-5">
+          La liste du personnel
+        </label>
+        <div class="col-lg-6 float-right" style="align-items: right;">
+          <button (click)="open()" class="btn btn-success btn-sm float-right"><i class="fa fa-plus"></i></button>
+        </div>
+      </div>
+    </div>
+
+  </nb-card-header>
+
+  <nb-card-body>
+    <table class="table">
+      <thead>
+        <th>
+          Code
+        </th>
+        <th>
+          Nom
+        </th>
+        <th>
+          Prénom (s)
+        </th>
+        <th>
+          Adresse
+        </th>
+        <th>
+          Téléphone
+        </th>
+        <th>
+          Carte
+        </th>
+        <th>
+          Création
+        </th>
+        <th>
+          Modification
+        </th>
+        <th>
+          
+        </th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let d of data">
+          <td>{{d.code}}</td>
+          <td>{{d.nom}}</td>
+          <td>{{d.prenom}}</td>
+          <td>{{d.adresse}}</td>
+          <td>{{d.telephone}}</td>
+          <td>{{d.carte?d.carte.numero:''}}</td>
+          <td>{{d.createdAt|date}}</td>
+          <td>{{d.updatedAt|date}}</td>
+          <td>
+            <button class="btn btn-danger btn-sm float-right"><i class="nb-trash"></i></button>
+            &nbsp;
+          <button class="btn btn-primary btn-sm float-right" style="margin-right: 5px;"><i class="nb-edit"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </nb-card-body>
+</nb-card>
