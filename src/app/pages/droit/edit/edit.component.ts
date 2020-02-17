@@ -30,6 +30,7 @@ export class EditComponent implements OnInit {
     this.droit.nom = addForm.form.value.nom;
     this.droitService.addOrUpdate(this.droit).subscribe(data=>{
       console.log(data);
+      this.dismiss();
     },err=>{
       console.log(err);
     })

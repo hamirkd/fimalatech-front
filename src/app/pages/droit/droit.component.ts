@@ -28,7 +28,7 @@ export class DroitComponent implements OnInit {
   }
 
   add(): void {
-    this.dialogService.open(EditComponent);
+    this.dialogService.open(EditComponent).onClose.subscribe(()=>this.ngOnInit());
   }
   data: Droit[] = [];
 

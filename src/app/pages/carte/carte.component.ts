@@ -14,7 +14,8 @@ export class CarteComponent implements OnInit {
   ngOnInit() {
     this.carteService.getAll().subscribe(data => {
       this.data = data as Carte[];
-    }, err => console.log(err))
+      console.log("Fonctionne bien")
+    }, err => console.error(err))
   }
   constructor(private carteService: CarteService,private dialogService: NbDialogService) {
 
@@ -27,7 +28,7 @@ export class CarteComponent implements OnInit {
   }
 
   add(): void {
-    this.dialogService.open(EditComponent);
+    this.dialogService.open(EditComponent).onClose.subscribe(()=>this.ngOnInit())
   }
   data: Carte[] = [];
 

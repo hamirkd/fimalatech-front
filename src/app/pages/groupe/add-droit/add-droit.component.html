@@ -1,0 +1,28 @@
+<form (ngSubmit)="save()" novalidate>
+    <nb-card>
+        <nb-card-header>Ajout de droit</nb-card-header>
+        <nb-card-body>
+                <div class="col-md-12 col-lg-12 col-xxxl-12">
+                    <nb-select ngModel id="carteId" name="carteId">
+                        <nb-option></nb-option>
+                        <nb-option (click)="add(droit)" *ngFor="let droit of droits" [value]="droit.id"> {{ droit.nom }}
+                        </nb-option>
+                    </nb-select>
+                </div>
+                <div class="col-md-12 col-lg-12 col-xxxl-12">
+                    <button (click)="delete(droit)" *ngFor="let droit of groupe.droits" class="btn btn-primary btn-sm"
+                        style="margin-right: 5px;">
+                        {{droit.nom}}
+                    </button>
+            </div>
+        </nb-card-body>
+        <nb-card-footer>
+            <button class="btn btn-success btn-sm float-right" style="margin-right: 5px;">
+                <nb-icon [icon]="'save'" pack="eva"></nb-icon>
+            </button>
+            <button (click)="dismiss()" class="btn btn-danger btn-sm float-right" style="margin-right: 5px;">
+                <nb-icon [icon]="'close'" pack="eva"></nb-icon>
+            </button>
+        </nb-card-footer>
+    </nb-card>
+</form>

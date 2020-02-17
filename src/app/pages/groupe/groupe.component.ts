@@ -3,6 +3,7 @@ import { NbDialogService } from '@nebular/theme';
 import { GroupeService } from '../../services/groupe.service';
 import { Groupe } from '../../models/groupe.model';
 import { EditComponent } from './edit/edit.component';
+import { AddDroitComponent } from './add-droit/add-droit.component';
 
 @Component({
   selector: 'ngx-groupe',
@@ -14,6 +15,8 @@ export class GroupeComponent implements OnInit {
   ngOnInit() {
     this.groupeService.getAll().subscribe(data=>{
       this.data=data as Groupe[];
+    },err=>{
+      console.error(err)
     })
   }
 
@@ -29,7 +32,15 @@ export class GroupeComponent implements OnInit {
 
   
   add(): void {
-    this.dialogService.open(EditComponent);
+    this.dialogService.open(EditComponent).onClose.subscribe(()=>{this.ngOnInit()})
+  }
+
+  addDroit(groupe:Groupe): void {
+    this.dialogService.open(AddDroitComponent,{
+      context:{
+        groupe:groupe
+      }
+    }).onClose.subscribe(()=>{this.ngOnInit()})
   }
   data: Groupe[] = [];
 

@@ -24,6 +24,10 @@ export class GroupeService {
     return this.http.post(this.baseUrl, groupe,httpOptions);
   }
 
+  addDroit(groupe: Groupe): Observable<any> {
+    return this.http.post(this.baseUrl+"/addDroit", groupe,httpOptions);
+  }
+
   getAll(): Observable<any> {
     return this.http.get(this.baseUrl,httpOptions);
   }

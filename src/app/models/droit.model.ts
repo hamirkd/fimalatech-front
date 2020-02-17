@@ -1,5 +1,5 @@
 export class Droit{
-    id:string;
+    id:number;
     nom:string;
     createdAt:Date;
     updatedAt:Date;

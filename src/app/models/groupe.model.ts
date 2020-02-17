@@ -6,4 +6,5 @@ export class Groupe{
     droits:Droit[];
     createdAt:Date;
     updatedAt:Date;
+    droit_ids:number[];
 }

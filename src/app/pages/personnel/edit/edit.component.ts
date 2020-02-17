@@ -34,6 +34,7 @@ export class EditComponent implements OnInit {
     this.personnel.adresse = addForm.form.value.adresse;
     this.personnelService.addOrUpdate(this.personnel).subscribe(data=>{
       console.log(data);
+      this.dismiss();
     },err=>{
       console.log(err);
     })
