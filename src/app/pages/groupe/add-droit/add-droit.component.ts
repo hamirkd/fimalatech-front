@@ -44,6 +44,7 @@ export class AddDroitComponent implements OnInit {
 
   save() {
     this.groupe.droit_ids=[];
+    this.groupe.droit_ids.push(0);
     for (let droit of this.groupe.droits) {
       this.groupe.droit_ids.push(droit.id);
     }
