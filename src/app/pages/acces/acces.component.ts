@@ -1,4 +1,6 @@
 import { Component, OnInit} from '@angular/core';
+import { AccesService } from '../../services/acces.service';
+import { Acces } from '../../models/acces.model';
 
 interface CardSettings {
   title: string;
@@ -16,15 +18,14 @@ export class AccesComponent implements OnInit {
 
   ngOnInit() {
   }
+  access:Acces[]=[];
 
-  constructor() {
-    for (let i = 1; i <= 10; i++) {
-      this.data.push({
-        nom: "Droit "+i,
-        dateCreation: (new Date().toLocaleDateString()),
-      }
-      )
-    }
+  constructor(private accessService:AccesService) {
+    
+    this.accessService.getAll().subscribe(data=>{
+      this.access = data as Acces[];
+    });
+
   }
 
   onDeleteConfirm(index): void {

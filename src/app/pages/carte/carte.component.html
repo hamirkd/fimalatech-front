@@ -23,6 +23,9 @@
           Numéro
         </th>
         <th>
+          Groupe
+        </th>
+        <th>
           Création
         </th>
         <th>
@@ -36,17 +39,15 @@
         <tr *ngFor="let d of data;let i=index">
           <td>{{i+1}}</td>
           <td>{{d.numero}}</td>
+          <td>{{d.groupe.nom}}</td>
           <td>{{d.createdAt|date}}</td>
           <td>{{d.updatedAt|date}}</td>
           <td>
             <button (click)="onDeleteConfirm(i)" class="btn btn-danger btn-sm float-right" style="margin-right: 5px;">
               <nb-icon [icon]="'trash'" pack="eva"></nb-icon>
             </button>
-            <button class="btn btn-default btn-sm float-right" style="margin-right: 5px;">
+            <button (click)="onUpdate(i)" class="btn btn-default btn-sm float-right" style="margin-right: 5px;">
               <nb-icon [icon]="'people'" pack="eva"></nb-icon>
-            </button>
-            <button class="btn btn-default btn-sm float-right" style="margin-right: 5px;">
-              <nb-icon [icon]="'person'" pack="eva"></nb-icon>
             </button>
           <button class="btn btn-primary btn-sm float-right" style="margin-right: 5px;">
             <nb-icon [icon]="'edit'" pack="eva"></nb-icon>

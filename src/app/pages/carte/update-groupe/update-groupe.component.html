@@ -1,0 +1,19 @@
+<form #addForm="ngForm" (ngSubmit)="add(addForm)" novalidate>
+    <nb-card>
+        <nb-card-header>Modifier son groupe</nb-card-header>
+        <nb-card-body>
+            <nb-select [selected]="groupeId" status="primary" fullWidth ngModel id="groupeId" name="groupeId">
+                <nb-option [value]="0"> Pas de groupe</nb-option>
+                <nb-option *ngFor="let groupe of groupes" [value]="groupe.id"> {{ groupe.nom }}</nb-option>
+            </nb-select>
+        </nb-card-body>
+        <nb-card-footer>
+            <button class="btn btn-success btn-sm float-right" style="margin-right: 5px;">
+                <nb-icon [icon]="'save'" pack="eva"></nb-icon>
+            </button>
+            <button (click)="dismiss()" class="btn btn-danger btn-sm float-right" style="margin-right: 5px;">
+                <nb-icon [icon]="'close'" pack="eva"></nb-icon>
+            </button>
+        </nb-card-footer>
+    </nb-card>
+</form>

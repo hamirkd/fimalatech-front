@@ -24,6 +24,10 @@ export class CarteService {
     return this.http.post(this.baseUrl, carte,httpOptions);
   }
 
+  updateCarte(carte: {id,numero,groupe_id}): Observable<any> {
+    return this.http.put(this.baseUrl, carte,httpOptions);
+  }
+
   getAll(): Observable<any> {
     return this.http.get(this.baseUrl,httpOptions);
   }

@@ -10,4 +10,5 @@ export class Carte{
     acces:Acces[];
     createdAt:Date;
     updatedAt:Date;
+    groupe_id?:any;
 }

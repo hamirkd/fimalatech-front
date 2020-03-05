@@ -36,30 +36,29 @@
           Nom
         </th>
         <th>
+          Type
+        </th>
+        <th>
           Date création
+        </th>
+        <th>
+          Date de mise à jour
         </th>
         <th>
           
         </th>
       </thead>
       <tbody>
-        <tr *ngFor="let d of data;let i=index">
+        <tr *ngFor="let d of access;let i=index">
           <td>{{i+1}}</td>
-          <td>{{d.nom}}</td>
-          <td>{{d.dateCreation}}</td>
+          <td>{{d.carte.numero}}</td>
+          <td>{{d.typeAcces}}</td>
+          <td>{{d.createdAt}}</td>
+          <td>{{d.updatedAt}}</td>
           <td>
             <button (click)="onDeleteConfirm(i)" class="btn btn-danger btn-sm float-right" style="margin-right: 5px;">
               <nb-icon [icon]="'trash'" pack="eva"></nb-icon>
             </button>
-            <button class="btn btn-default btn-sm float-right" style="margin-right: 5px;">
-              <nb-icon [icon]="'people'" pack="eva"></nb-icon>
-            </button>
-            <button class="btn btn-default btn-sm float-right" style="margin-right: 5px;">
-              <nb-icon [icon]="'person'" pack="eva"></nb-icon>
-            </button>
-          <button class="btn btn-primary btn-sm float-right" style="margin-right: 5px;">
-            <nb-icon [icon]="'edit'" pack="eva"></nb-icon>
-          </button>
           </td>
         </tr>
       </tbody>
